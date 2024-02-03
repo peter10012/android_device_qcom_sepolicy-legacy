@@ -107,7 +107,7 @@ allow wfdservice {audioserver_service permission_service surfaceflinger_service 
 allow wfdservice self:capability net_admin;
 
 #allow binder call to mediacodec from wfdservice
-binder_call(wfdservice, mediacodec);
+#binder_call(wfdservice, mediacodec);
 
 #Allow wfdservice to query interface name of network (p2p etc.)
 allow wfdservice self:netlink_socket create_socket_perms_no_ioctl;
