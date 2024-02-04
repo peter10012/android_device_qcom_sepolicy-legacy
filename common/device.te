@@ -163,3 +163,5 @@ type persist_block_device, dev_type;
 
 
 type cpuctl_device, dev_type;
+
+type alarm_device, dev_type, mlstrustedobject;
