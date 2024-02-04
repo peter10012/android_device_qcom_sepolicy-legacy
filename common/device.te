@@ -160,3 +160,6 @@ type bg_daemon_device, dev_type;
 type qg_device, dev_type;
 
 type persist_block_device, dev_type;
+
+
+type cpuctl_device, dev_type;
