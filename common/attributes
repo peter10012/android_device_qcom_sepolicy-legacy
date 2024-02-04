@@ -97,3 +97,7 @@ attribute hal_sensorscalibrate_qti_server;
 attribute hal_wigig_npt;
 attribute hal_wigig_npt_client;
 attribute hal_wigig_npt_server;
+
+attribute vendor_persist_type;
+attribute untrusted_app_visible_hwservice;
+expandattribute untrusted_app_visible_hwservice false;
