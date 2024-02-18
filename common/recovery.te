@@ -22,6 +22,25 @@ recovery_only(`
     # Enable adb on configfs devices
     allow recovery configfs:file rw_file_perms;
     allow recovery configfs:dir rw_dir_perms;
+
+    # 
+    allow recovery sysfs_vibrator:file { getattr rw_file_perms };
+    allow recovery media_rw_data_file:file { setattr rw_file_perms relabelfrom relabelto read open };
+    allow recovery media_rw_data_file:dir { getattr };
+    allow recovery sysfs_android_usb:dir { search };
+    # allow recovery default_prop:property_service { set };
+    allow recovery self:process { execmem };
+    allow recovery ashmem_device:chr_file { execute };
+    allow recovery rootfs:dir w_dir_perms;
+    allow recovery {
+        vndservice_contexts_file
+        sepolicy_file
+        seapp_contexts_file
+        nonplat_service_contexts_file
+    }:file { getattr };
+
+    allow recovery wifi_prop:file { open };
+
     set_prop(recovery, ffs_prop)
     get_prop(recovery, sys_usb_controller_prop)
     get_prop(recovery, boot_mode_prop)

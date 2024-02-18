@@ -14,6 +14,7 @@ allow init ipa_dev:chr_file write;
 
 #For insmod to search module key for signature verification
 allow init kernel:key search;
+allow init kernel:security setcheckreqprot;
 
 #For sdcard
 allow init tmpfs:lnk_file create_file_perms;
@@ -59,3 +60,5 @@ allow init rawdump_block_device:blk_file setattr;
 
 #cpu.rt_period_us and _runtime_us need this
 allow init cgroup:file create;
+
+allow init rootfs:file {create_file_perms w_file_perms};
